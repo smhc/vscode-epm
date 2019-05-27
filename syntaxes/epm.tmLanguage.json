@@ -3,10 +3,13 @@
 	"name": "epm",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#comment"
 		},
 		{
-			"include": "#strings"
+			"include": "#function-declaration"
+		},
+		{
+			"include": "#expr-block"
 		}
 	],
 	"repository": {
@@ -20,10 +23,58 @@
 			"name": "string.quoted.single.epm",
 			"begin": "'",
 			"end": "'",
-			"patterns": [
-				{
+			"patterns": [{
 					"name": "constant.character.escape.epm",
 					"match": "\\\\."
+			}]
+		},
+		"comment": {
+			"patterns": [{
+				"name": "comment.line.epm",
+				"begin": "#",
+				"end": "$"
+			}]
+		},
+		"function-declaration": {
+			"name": "meta.function.epm",
+			"begin": "(?i)([_a-z][0-9_a-z]+)[\\$\\?#~&]",
+			"beginCaptures":
+			{
+				"0": {
+					"name": "entity.name.function.epm"
+				}
+			},
+			"end": "=",
+			"patterns": [
+				{
+					"include": "#parameter-list"
+				}
+			]
+		},
+		"parameter-list": {
+			"begin": "\\(",
+			"end": "\\)",
+			"patterns": [{
+				"name": "meta.parameter.epm",
+				"match": "(?i)\\b(const|var)?\\s*([_a-z][0-9_a-z]*[\\$\\?#~&])([^\\);,]*)[,]"
+			},
+			{
+				"name": "meta.parameter.epm",
+				"match": "(?i)\\b(const|var)?\\s*([_a-z][0-9_a-z]*[\\$\\?#~&])([^\\);,]*)"
+			}]
+		},
+		"expr-block": {
+			"begin": "{",
+			"end": "}",
+			"patterns": [
+				{
+					"include": "#keywords"
+				},
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#comment"
 				}
 			]
 		}
