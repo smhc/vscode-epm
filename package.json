@@ -1,7 +1,7 @@
 {
     "name": "vscode-epm",
     "displayName": "vscode-epm",
-    "description": "EPM syntax support for VScode",
+    "description": "EPM syntax highlighting for VScode",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.34.0"

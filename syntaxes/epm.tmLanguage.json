@@ -6,17 +6,56 @@
 			"include": "#comment"
 		},
 		{
-			"include": "#function-declaration"
+			"include": "#strings"
 		},
 		{
-			"include": "#expr-block"
+			"include": "#keywords"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#support"
+		},
+		{
+			"include": "#storage"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.epm",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(if|then|else|do|while|for|return|break|continue|try|except|finally|switch|case|default|import)\\b"
+			},
+			{
+				"name": "keyword.operator.epm",
+				"match": "\\b(or|and|not|OR|AND|NOT)\\b"
+			}]
+		},
+		"storage": {
+			"patterns": [{
+				"name": "storage.type.epm",
+				"match": "\\b(var|const|global)\\b"
+			},
+			{
+				"name": "storage.modifier.epm",
+				"match": "\\b(public|private)\\b"
+			}]
+		},
+		"constants": {
+			"patterns": [{
+				"name": "constant.language.null.epm",
+				"match": "\\b(null[\\$\\?\\&~#@]+(\\{\\}|\\[\\])?)"
+			},
+			{
+				"name": "constant.language.epm",
+				"match": "\\b(TRUE|FALSE|PI|EPS|SECOND|MINUTE|HOUR|DAY|MAX_INTEGER|MAX_LONG|MAX_REAL|MAX_DOUBLE|MAX_DATE|MIN_INTEGER|MIN_LONG|MIN_REAL|MIN_DOUBLE|MIN_DATE|NATIVE_FORMAT|STDOUT|STDERR)\\b"
+			}]
+		},
+		"support": {
+			"patterns": [{
+				"name": "support.function.epm",
+				"match": "\\b(abort|abs|acos|add_months|array_maxsize|asin|assert|assert_cmp|assert_throw|atan|atan2|avg|bcd_add|bit_and|bit_not|bit_or|bit_reset|bit_set|bit_shl|bit_shr|bit_test|bit_xor|bsearch|bytecode|bytes_total|bytes_used|call_stack|caller|ceil|char|compact|conceal|cos|count|current_date|current_time|dayofmonth|dayofweek|dayofyear|daysbetween|daysinmonth|debug|debug_off|debug_on|debug_level|decimal_point|delete|distinct|effective_date|error_message|error_number|eval|eval_cache_dump|eval_cache_maxsize|eval_cache_stats|exists|exp|expect|expect_cmp|expect_throw|first|floor|gstats|gstats_off|gstats_on|hash|hash_maxsize|hires_time|hourofday|is_array|is_blob|is_concealed|is_date|is_debug_on|is_defined|is_double|is_hash|is_integer|is_long|is_lower|is_real|is_string|is_upper|keys|length|lengthb|line|log|log10|loop_limit|lpad|ltrim|max|message_box|message_number|min|minutes|monthofyear|monthsbetween|next|nvl|ord|parse|parse_date|pop|position|positionb|print|push|reveal|reverse|round|rpad|rtrim|seconds|sin|sizeof|sleep|sort|sqrt|stack_limit|stats|stats_date|stats_off|stats_on|stats_reset|strict_on|strict_off|substr|substrb|sum|tan|to_blob|to_blob_array|to_date|to_double|to_integer|to_long|to_lower|to_objid|to_real|to_string|to_string_blob|to_time|to_upper|transfer|undefine|values|weekofyear)\\b"
 			}]
 		},
 		"strings": {
@@ -31,52 +70,9 @@
 		"comment": {
 			"patterns": [{
 				"name": "comment.line.epm",
-				"begin": "#",
+				"begin": "(^#| #)",
 				"end": "$"
 			}]
-		},
-		"function-declaration": {
-			"name": "meta.function.epm",
-			"begin": "(?i)([_a-z][0-9_a-z]+)[\\$\\?#~&]",
-			"beginCaptures":
-			{
-				"0": {
-					"name": "entity.name.function.epm"
-				}
-			},
-			"end": "=",
-			"patterns": [
-				{
-					"include": "#parameter-list"
-				}
-			]
-		},
-		"parameter-list": {
-			"begin": "\\(",
-			"end": "\\)",
-			"patterns": [{
-				"name": "meta.parameter.epm",
-				"match": "(?i)\\b(const|var)?\\s*([_a-z][0-9_a-z]*[\\$\\?#~&])([^\\);,]*)[,]"
-			},
-			{
-				"name": "meta.parameter.epm",
-				"match": "(?i)\\b(const|var)?\\s*([_a-z][0-9_a-z]*[\\$\\?#~&])([^\\);,]*)"
-			}]
-		},
-		"expr-block": {
-			"begin": "{",
-			"end": "}",
-			"patterns": [
-				{
-					"include": "#keywords"
-				},
-				{
-					"include": "#strings"
-				},
-				{
-					"include": "#comment"
-				}
-			]
 		}
 	},
 	"scopeName": "source.epm"
