@@ -1,4 +1,4 @@
-# vscode-epm README
+# vscode-epm
 
 Provides basic syntax highlighting for .eth files written in the EPM language.
 
@@ -9,9 +9,4 @@ Support for known language built-ins and constants.
 ## Known Issues
 
 Scopes are identified using simple keyword matching rather than a complete grammar.
-
-## Release Notes
-
-### 0.0.1
-
-Initial release.
+Nested functions are not highlighted.
