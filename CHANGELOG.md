@@ -2,8 +2,9 @@
 
 ## v0.0.2
 
-- Identify function names at top level.
-- Add elseif support
+- Identify functions and nested functions
+- Add missing elseif support
+- Hashbang detection
 
 ## v0.0.1
 

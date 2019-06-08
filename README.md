@@ -9,4 +9,3 @@ Support for known language built-ins and constants.
 ## Known Issues
 
 Scopes are identified using simple keyword matching rather than a complete grammar.
-Nested functions are not highlighted.

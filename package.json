@@ -19,6 +19,7 @@
             "id": "epm",
             "aliases": ["epm", "epm"],
             "extensions": [".eth"],
+            "firstLine": "^#!/.*\\bepm(_core|testharness)?\\b",
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
