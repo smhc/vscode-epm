@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.0.4
+
+- Snippets support: for loops, to_date and SQLQuery
+
 ## v0.0.3
 
 - Added .epm file extension

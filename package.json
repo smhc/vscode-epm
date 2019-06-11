@@ -2,7 +2,7 @@
     "name": "vscode-epm",
     "displayName": "vscode-epm",
     "description": "EPM syntax highlighting for VScode",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "smhc",
     "engines": {
         "vscode": "^1.34.0"
@@ -26,6 +26,10 @@
             "language": "epm",
             "scopeName": "source.epm",
             "path": "./syntaxes/epm.tmLanguage.json"
+        }],
+        "snippets": [{
+            "language": "epm",
+            "path": "./snippets/epm.json"
         }]
     }
 }

@@ -1,0 +1,24 @@
+{
+    "For_Loop": {
+        "prefix": "for",
+        "body": [
+        "for (${1:index} := 0; ${1:index} < length(${2:array}${3:type}[]); ++${1:index}) {",
+        "\tvar elem${3:type} := ${2:array}${3:type}[${1:index}];",
+        "}"
+        ],
+        "description": "For loop through an array"
+    },
+    "to_date": {
+        "prefix": "to_date",
+        "body": [
+        "to_date(${1:date}, NATIVE_FORMAT)"
+        ],
+        "description": "to_date with format string"
+    },
+    "SQLQuery":  {
+        "prefix": "SQLQuery",
+        "body": ["var lRows?[] := SQLQuery?[]('SELECT x FROM dual WHERE 1=1', [${2:params}], [${3:values}]);",
+        "var lresult& := lRows&[0][0];"],
+        "description": "SQLQuery?[] with where clause"
+    }
+}
