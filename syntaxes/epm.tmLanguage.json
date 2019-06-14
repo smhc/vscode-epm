@@ -132,7 +132,7 @@
 		},
 		"support": {
 			"name": "support.function.epm",
-			"match": "\\b(abort|abs|acos|add_months|array_maxsize|asin|assert|assert_cmp|assert_throw|atan|atan2|avg|bcd_add|bit_and|bit_not|bit_or|bit_reset|bit_set|bit_shl|bit_shr|bit_test|bit_xor|bsearch|bytecode|bytes_total|bytes_used|call_stack|caller|ceil|char|compact|conceal|cos|count|current_date|current_time|dayofmonth|dayofweek|dayofyear|daysbetween|daysinmonth|debug|debug_off|debug_on|debug_level|decimal_point|delete|distinct|effective_date|error_message|error_number|eval|eval_cache_dump|eval_cache_maxsize|eval_cache_stats|exists|exp|expect|expect_cmp|expect_throw|first|floor|gstats|gstats_off|gstats_on|hash|hash_maxsize|hires_time|hourofday|is_array|is_blob|is_concealed|is_date|is_debug_on|is_defined|is_double|is_hash|is_integer|is_long|is_lower|is_real|is_string|is_upper|keys|length|lengthb|line|log|log10|loop_limit|lpad|ltrim|max|message_box|message_number|min|minutes|monthofyear|monthsbetween|next|nvl|ord|parse|parse_date|pop|position|positionb|print|push|reveal|reverse|round|rpad|rtrim|seconds|sin|sizeof|sleep|sort|sqrt|stack_limit|stats|stats_date|stats_off|stats_on|stats_reset|strict_on|strict_off|substr|substrb|sum|tan|to_blob|to_blob_array|to_date|to_double|to_integer|to_long|to_lower|to_objid|to_real|to_string|to_string_blob|to_time|to_upper|transfer|undefine|values|weekofyear)(?=[^~@#\\&\\?\\$])\\b"
+			"match": "\\b(abort|abs|acos|add_months|array_maxsize|asin|assert|assert_cmp|assert_throw|atan|atan2|avg|bcd_add|bit_and|bit_not|bit_or|bit_reset|bit_set|bit_shl|bit_shr|bit_test|bit_xor|bsearch|bytecode|bytes_total|bytes_used|call_stack|caller|ceil|char|compact|conceal|cos|count|current_date|current_time|dayofmonth|dayofweek|dayofyear|daysbetween|daysinmonth|debug|debug_off|debug_on|debug_level|decimal_point|delete|distinct|effective_date|error_message|error_number|eval|eval_cache_dump|eval_cache_maxsize|eval_cache_stats|exists|exp|expect|expect_cmp|expect_throw|first|floor|gstats|gstats_off|gstats_on|hash|hash_maxsize|hires_time|hourofday|is_array|is_blob|is_concealed|is_date|is_debug_on|is_defined|is_double|is_hash|is_integer|is_long|is_lower|is_real|is_string|is_upper|keys|length|lengthb|line|log|log10|loop_limit|lpad|ltrim|max|message_box|message_number|min|minutes|monthofyear|monthsbetween|next|nvl|ord|parse|parse_date|pop|position|positionb|print|push|reveal|reverse|round|rpad|rtrim|seconds|sin|sizeof|sleep|sort|sqrt|stack_limit|stats|stats_date|stats_off|stats_on|stats_reset|strict_on|strict_off|substr|substrb|sum|tan|to_blob|to_blob_array|to_date|to_double|to_integer|to_long|to_lower|to_objid|to_real|to_string|to_string_blob|to_time|to_upper|transfer|undefine|values|weekofyear)(?=\\s*\\()\\b"
 		},
 		"strings": {
 			"name": "string.quoted.single.epm",
@@ -145,7 +145,7 @@
 		},
 		"comment": {
 			"name": "comment.line.epm",
-			"begin": "(^#|(?<=[\\s])#)",
+			"begin": "(^#|(?<![a-zA-Z0-9_])#)",
 			"end": "$"
 		}
 	},
