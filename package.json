@@ -18,7 +18,7 @@
         "languages": [{
             "id": "epm",
             "aliases": ["epm", "epm"],
-            "extensions": [".eth", ".epm"],
+            "extensions": [".eth", ".epm", ".svt"],
             "firstLine": "^#!/.*\\bepm(_core|testharness)?\\b",
             "configuration": "./language-configuration.json"
         }],
